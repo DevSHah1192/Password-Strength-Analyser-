@@ -1,0 +1,71 @@
+body {
+    background: linear-gradient(to right, #e8f5e9, #a5d6a7);
+    font-family: Arial, sans-serif;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.card {
+    background: white;
+    padding: 30px;
+    width: 400px;
+    border-radius: 12px;
+    text-align: center;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.15);
+}
+
+input {
+    width: 100%;
+    padding: 12px;
+    margin-bottom: 12px;
+}
+
+button {
+    width: 100%;
+    padding: 12px;
+    background: #2e7d32;
+    color: white;
+    border: none;
+    cursor: pointer;
+}
+
+.Weak { color: red; }
+.Medium { color: orange; }
+.Strong { color: green; }
+
+.ok {
+    color: green;
+    font-weight: bold;
+}
+
+.bar-container {
+    width: 100%;
+    height: 12px;
+    background: #ddd;
+    border-radius: 6px;
+    margin: 10px 0 20px 0;
+}
+
+.bar {
+    height: 100%;
+    border-radius: 6px;
+}
+
+.bar.Weak {
+    background: red;
+}
+
+.bar.Medium {
+    background: orange;
+}
+
+.bar.Strong {
+    background: green;
+}
+.show-pass {
+    display: block;
+    margin-bottom: 15px;
+    font-size: 14px;
+}

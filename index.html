@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Password Strength Checker</title>
+    <link rel="stylesheet" href="/static/style.css">
+</head>
+
+<body>
+
+<div class="card">
+    <h1>Password Strength Checker</h1>
+    <p class="sub">Student Project</p>
+
+    <form method="post">
+        <input type="password" name="password" placeholder="Enter password" required>
+
+        <label class="show-pass">
+            <input type="checkbox" onclick="togglePassword()"> Show Password
+        </label>
+
+        <button type="submit">Check</button>
+    </form>
+
+    {% if result %}
+        <h2>Strength: {{ result.strength }}</h2>
+        <p>Points: {{ result.points }}/5</p>
+
+        <!-- Progress Bar (NOW SAFE) -->
+        <div class="bar-container">
+            <div class="bar {{ result.strength }}"
+                 style="width: {{ result.points * 20 }}%;">
+            </div>
+        </div>
+
+        {% if result.missing %}
+            <h3>Missing Conditions:</h3>
+            <ul>
+                {% for m in result.missing %}
+                    <li>{{ m }}</li>
+                {% endfor %}
+            </ul>
+        {% else %}
+            <p>All conditions met ✔</p>
+        {% endif %}
+    {% endif %}
+
+</div>
+
+<script>
+function togglePassword() {
+    const input = document.querySelector("input[name='password']");
+    input.type = input.type === "password" ? "text" : "password";
+}
+</script>
+
+</body>
+</html>
